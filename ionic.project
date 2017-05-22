@@ -1,0 +1,19 @@
+{
+  "name": "ionic-modular-seed",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/vendor/**/*"
+  ],
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "13.42.319.6"
+    }
+  ]
+}

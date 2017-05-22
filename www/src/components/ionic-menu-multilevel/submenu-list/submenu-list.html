@@ -1,0 +1,15 @@
+<div class="header">
+    <i class="icon" ng-class="menuItem.icon"></i>
+    <h2 ng-bind="menuItem.title"></h2>
+</div>
+<ion-list>
+    <ion-item class="item-icon-left"
+        ng-click="toggleSubmenu(index)">
+        <i class="icon ion-ios-arrow-back"></i> Atrás
+    </ion-item>
+    <ion-item class="item-icon-left"
+        ng-repeat="(indexSubmenu, submenu) in menuItem.submenu"
+        ng-click="onClickSubmenu(submenu)" menu-close>
+        <i class="icon" ng-class="submenu.icon"></i> {{submenu.title}}
+    </ion-item>
+</ion-list>

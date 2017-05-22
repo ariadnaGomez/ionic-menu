@@ -1,0 +1,13 @@
+<ion-side-menus class="app-menu" enable-menu-with-back-views="true">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar>
+      <ion-nav-buttons side="right">
+        <button class="lines-button x" menu-toggle="{{side}}">
+          <span class="lines"></span>
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+  <menu-slide menu="menu" side="side" logo-path="logo"></menu-slide>
+</ion-side-menus>

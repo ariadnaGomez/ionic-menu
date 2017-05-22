@@ -1,0 +1,93 @@
+.menu-open {
+    ion-header-bar.bar.bar-header {
+        .lines-button {
+            -webkit-transform: scale3d(0.8,0.8,0.8);
+            transform: scale3d(0.8,0.8,0.8);
+            .lines {
+                background: transparent;
+                &:before {
+                    -webkit-transform: rotate3d(0,0,1,45deg);
+                    transform: rotate3d(0,0,1,45deg);
+                }
+                &:after {
+                    transform: rotate3d(0,0,1,-45deg);
+                }
+                &:before, &:after {
+                    -webkit-transform-origin: 50% 50%;
+                    transform-origin: 50% 50%;
+                    top: 0;
+                    width: 2rem;
+                }
+            }
+        }
+    }
+}
+ion-header-bar.bar.bar-header {
+    background: #ce2929;
+    .right-buttons {
+        vertical-align: middle;
+    }
+    .lines-button {
+        // padding: 2rem 1rem;
+        transition: .3s;
+        transition-delay: .2s;
+        user-select: none;
+        border-radius: 0.57143rem;
+        background: transparent;
+        border: 0;
+        &:active {
+            transition: 0;
+            transition-delay: .2s;
+        }
+        &.close {
+            -webkit-transform: scale3d(0.8,0.8,0.8);
+            transform: scale3d(0.8,0.8,0.8);
+            .lines {
+                background: transparent;
+                &:before {
+                    -webkit-transform: rotate3d(0,0,1,45deg);
+                    transform: rotate3d(0,0,1,45deg);
+                }
+                &:after {
+                    transform: rotate3d(0,0,1,-45deg);
+                }
+                &:before, &:after {
+                    -webkit-transform-origin: 50% 50%;
+                    transform-origin: 50% 50%;
+                    top: 0;
+                    width: 2rem;
+                }
+            }
+        }
+        .lines {
+            display: inline-block;
+            width: 1.6rem;
+            height: 3px;
+            background: #ecf0f1;
+            border-radius: 0.28571rem;
+            transition: 0.3s;
+            transition-delay: .2s;
+            position: relative;
+            &:before {
+                top: 10px;
+            }
+            &:after {
+                top: -10px;
+            }
+            &:before, &:after {
+                display: inline-block;
+                width: 1.6rem;
+                height: 3px;
+                background: #ecf0f1;
+                border-radius: 0.28571rem;
+                transition: 0.3s;
+                transition-delay: .2s;
+                position: absolute;
+                left: 0;
+                content: '';
+                -webkit-transform-origin: 0.28571rem center;
+                transform-origin: 0.28571rem center;
+            }
+        }
+    }
+}

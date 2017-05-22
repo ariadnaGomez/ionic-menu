@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/app.css" rel="stylesheet">
+
+    <!-- inject-vendor:js -->
+    <script src="vendor/ionic/js/ionic.bundle.js"></script>
+    <!-- endinject -->
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+
+    <!-- inject:js -->
+    <!-- Bootstrapping -->
+    <script src="src/others.js"></script>
+    <script src="src/app.js"></script>
+    <script src="src/app.config.js"></script>
+    <script src="src/app.run.js"></script>
+
+    <!-- Reusable Blocks/Modules -->
+    <script src="src/blocks/exception/exception.module.js"></script>
+    <script src="src/blocks/exception/exception.js"></script>
+    <script src="src/blocks/toast/toast.module.js"></script>
+    <script src="src/blocks/toast/toast.js"></script>
+
+    <!-- Core module -->
+    <script src="src/core/core.module.js"></script>
+    <script src="src/core/defaults.values.js"></script>
+    <script src="src/core/services.url.config.js"></script>
+    <script src="src/core/services.config.js"></script>
+    <script src="src/core/states.service.js"></script>
+
+    <!-- Menu module -->
+    <script src="src/layout/app.controller.js"></script>
+    <script src="src/layout/menu.module.js"></script>
+    <script src="src/layout/menu.controller.js"></script>
+    <script src="src/layout/menu.data.js"></script>
+
+    <!-- Intro module -->
+    <script src="src/intro/intro.module.js"></script>
+    <script src="src/intro/config.route.js"></script>
+    <script src="src/intro/intro.ctrl.js"></script>
+    <script src="src/intro/intro.service.js"></script>
+
+    <!-- Dashboard module -->
+    <script src="src/dashboard/dashboard.module.js"></script>
+    <script src="src/dashboard/config.route.js"></script>
+    <script src="src/dashboard/dashboard.ctrl.js"></script>
+    <script src="src/dashboard/dashboard.service.js"></script>
+
+    <!-- Login module -->
+    <script src="src/login/login.module.js"></script>
+    <script src="src/login/config.route.js"></script>
+    <script src="src/login/login.ctrl.js"></script>
+    <script src="src/login/login.service.js"></script>
+    <script src="src/login/login.formatter.js"></script>
+
+    <!-- Menu Component -->
+    <script src="src/components/ionic-menu-multilevel/menu-slide.module.js"></script>
+    <script src="src/components/ionic-menu-multilevel/menu-slide.js"></script>
+    <script src="src/components/ionic-menu-multilevel/submenu-list/submenu-list.js"></script>
+    <script src="src/components/ionic-menu-multilevel/submenu-generator/submenu-generator.js"></script>
+    <!-- endinject -->
+  </head>
+    <body ng-app="app" ng-controller="AppController">
+
+      <ion-nav-view name="mainApp"></ion-nav-view>
+
+  </body>
+</html>
