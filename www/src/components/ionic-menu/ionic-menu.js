@@ -16,7 +16,9 @@
             scope : {
                 menu: '=',
                 side: '=',
-                logoPath: '='
+                logoPath: '=',
+                title: '@',
+                version: '@'
             },
             controller : MenuController,
             templateUrl: 'src/components/ionic-menu/ionic-menu.html',
@@ -49,6 +51,9 @@
 
             function activate() {
                 initSubmenu();
+                if (angular.isUndefined($scope.side) || $scope.side === null || $scope.side === ' ') {
+                    $scope.side = RIGHT_SIDE_MENU;
+                }
             }
 
             $scope.$on('menu-multilevel:close', closeMenu);

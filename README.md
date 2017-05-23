@@ -1,106 +1,147 @@
 Ionic Modular Seed
 ==================
 
-## What is in here? ##
+## Demo
 
-This project is an application skeleton for a typical development [Ionic Framework](http://ionicframework.com), the Advanced HTML5 Hybrid Mobile App Framework, a front-end SDK for developing hybrid mobile apps with HTML5.
+https://codepen.io/ariadnaGomez/pen/QvJXXw
 
-This seed main features are:
+## Requirements
 
-* [AngularJS modularity](https://github.com/johnpapa/ng-demos/tree/master/modular) development guidelines, with the [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide) by [John Papa](http://www.johnpapa.net).
-* [SMACSS (Scalable and Modular Architecture for CSS)](http://smacss.com) style guide based on the [SMACSS + SCSS starter](https://github.com/jonathanpath/SASS-SMACSS)
-* Ionic starter blank template, with some views to show examples of modularity.
+* AngularJS 1.5+
+* Ionic 1.3+
 
+## Installing
 
-## Main libraries
+* NPM ( npm install ionic-menu-bower --save )
+* Bower ( bower install ionic-menu --save )
 
-The following libraries are used in this project:
+<script src="ionic-menu.min.js"></script>
+<link rel="stylesheet" type="text/css" href="ionic-menu.min.css">
 
-*   [Ionic framework](http://ionicframework.com) (v1.1.0)
-*   [AngularJS](http://angularjs.org) (v1.4.3)
-*   [Gulp](http://gulpjs.com)
-*   [Sass](http://sass-lang.com)
-*   [Jasmine](http://jasmine.github.io)
+## Usage
 
-
-## Prerequisites
-
-To start the project, firstly they are needed the following requirements:
-
-*   You need [Git](http://git-scm.com) to clone the ionic-modular-seed repository.
-*   [node.js](http://nodejs.org) and its package manager (npm)
-*   [Ruby](https://www.ruby-lang.org)
-*   [Sass](http://sass-lang.com) ( ruby gem )
-*
+1. Add the custom element <ionic-menu> to the HTML after <ion-side-menu-content></ion-side-menu-content>
+2. Set up the options to enable the menu options you need.
+3. You can override the header and footer of the menu.
 
 
-## IDE Plugins recommended to use
+## Configuration
 
-The Ionic Modular Seed has some files preconfigured and ready to use if you decide are a good choice for your development:
+### Parameters
 
-*   [EditorConfig](http://editorconfig.org/) to help developers define and maintain consistent coding styles between different editors and IDEs.
-*   [JSHint](http://jshint.com/about/) to detect errors and potential problems in JavaScript code.
-*   [ctags](http://ctags.sourceforge.net/) to generate an index file of language objects found in source files that allows these items to be quickly and easily located by a text editor or other utility.
+Name | Type | Description | Example
+--- | --- | --- | ---
+side | string | Set's the side where the menu will be rendered | `left` `right`
+logoPath | string | path to the image to show in the header | `path/to/img`
+menu | array | Menu options Configuration | see next paragraph
+title | string | Title to show after the logo image | `Mi awesome title`
+version | string | Text to show in the predefined footer | `Version 1.0.0`
 
+### Menu options Configuration
 
-## Install
+* To configure a one level menu-option you should set the next object:
 
-1. Install prerequisites
-2. `git clone https://github.com/manudefrutosvila/ionic-modular-seed.git <project>`
-3. `cd <project>`
-4. `npm -g install bower gulp`
-5. `npm -g install ionic cordova`
-6. `npm install`
-7. `ionic setup sass`
+```
+{
+    title: 'Title to show in the list',
+    icon: 'class', // Class to add to the icon
+    state: 'state.to.redirect' // state to redirect when clicked
+}
+```
 
+* To configure a two level menu-option you should set the next object:
 
-## Run dev server
+```
+{
+    title: 'Two level menu option',
+    icon: 'class',
+    submenu: [ // This is the list of options to open in the second menu.
+        {
+            title: 'Second menu level. First option',
+            icon: 'awesome-icon icon',
+            state: 'state.to.redirect'
+        },
+        {
+            title: 'Second menu level. Second option',
+            icon: 'awesome-icon icon',
+            state: 'state.to.redirect'
+        }
+    ]
+}
+```
 
-To start a developer server, you should use [Ionic CLI](http://ionicframework.com/docs/cli/)
+* Instead of a list menu you could show a custom directive in the second level.
 
-    cd <project>
-    ionic serve
+```
+{
+    title: 'Second menu level. Second option',
+    icon: 'awesome-icon icon',
+    component: 'custom-directive', // This option will render <div custom-directive menu-item="data"></div>
+    extraData: {} // This is optional if you need extra data in the custom diretive we just defined.
+}
+```
 
-It will be opened a browser with the address `http://localhost:8100`. Ionic will start the server with live reload and the [Gulp](http://gulpjs.com) tasks for watch changes and compile Sass files if needed.
+The custom directive will receive al directive parameter menu-item the object we just defined. So you can add extra data if needed.
 
-## Emulate a device
+### Header & Footer
 
-Since with Ionic we are building a native or hybrid app, we can and should test it as one. You can check [Ionic CLI FAQ](http://ionicframework.com/docs/ionic-cli-faq/) to see common pitfalls.
+You can override menu-header and menu-footer to show whatever you want.
 
-#### iOS device
+```
+<ionic-menu>
+    <menu-header>This is my awesome header!!</menu-header>
+    <menu-footer>This is my awesome footer!!</menu-footer>
+</ionic-menu>
+```
 
-You'll need to sign up for an [Apple Developer](https://developer.apple.com/) account to test as a native app on a iOS device.
+## Example
 
-Once yu have an account and have set up XCode with your certificates to enable device testing you can either open directly the ios simulator with Ionic CLI. You probably will need to instal ios-sim `npm install -g ios-sim`
-
-    ionic emulate ios
-    ionic run ios
-
-Or you can open a XCode project from your project folder `platform/ios/` and start testing from XCode.
-
-#### Android device
-
-You'll need to install [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Android SDK](https://developer.android.com/sdk/index.html). Then you can either launch the Android Studio emulator
-
-    ionic emulate android
-
-Or plug your device in and install the app. Make sure you have [USB debugging enabled](http://developer.android.com/tools/device.html) on your device
-
-    ionic run android
-
-
-## Ionic utilities
-
-Appart from emulate and run, [Ionic CLI](http://ionicframework.com/docs/cli/) has a various set of utilities. A interesting one is to restore the Ionic environment set in `package.json`, which will restore the platforms and plugins:
-
-    ionic state restore
-
-## Ionic Crosswalk
-
-If you want to improve the performance of your app in different old android devices (With versions 4.1 to 4.4 the improvement is woouh), you can do it using crosswalk with ionic. Crosswalk allows you to bundle a Chromido navigator v8 as the container of your app even you can set which version you will use (NOTE: the size of your app will increase because it encapsulates a concrete web navigator inside the app).
-
-To use crosswalk you will need a node version 0.12 or higher.
-
-1. `ionic browser list` #Find the version of Crosswalk you want.
-2. `ionic browser add crosswalk@10.39.235.15` #Install stable version 10.39.235.15 and will change ionic.project file. If you don't have crosswalk, different libraries will be downloaded
-3. `ionic build android` # it will generate the apk in the path
+```
+<html>
+<head>
+    <script src="ionic.bundle.js"></script>
+    <script src="ionic-menu.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="ionic-menu.min.css">
+    <script>
+        angular.module('myApp', ['app.ionic-menu'])
+            .controller('MyCtrl', function($scope, $http) {
+                $scope.menu = [
+                    {
+                        title: 'Home',
+                        icon: 'ion-ios-home',
+                        state: ''
+                    },
+                    {
+                        title: 'About us',
+                        icon: 'ion-information-circled',
+                        submenu: [
+                            {
+                                title: 'The company',
+                                icon: 'ion-ios-pie',
+                                state: ''
+                            },
+                            {
+                                title: 'Our offices',
+                                icon: 'ion-android-map',
+                                state: ''
+                            }
+                        ]
+                    },
+                    {
+                        title: 'News',
+                        icon: 'ion-ios-paper',
+                        state: '',
+                        component: 'custom-directive',
+                        extradata: {}
+                    }
+                ];
+                $scope.side = 'right';
+                $scope.logoPath = 'http://image.path';
+            });
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="MyCtrl">
+    <ionic-menu side="side" menu="menu" logo-path="logoPath"></ionic-menu>
+</body>
+</html>
+```
