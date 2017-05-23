@@ -2,6 +2,6 @@
     'use strict';
 
     angular
-        .module('app.menu-slide', []);
+        .module('app.ionic-menu', []);
 
 })();

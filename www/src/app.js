@@ -21,7 +21,7 @@
         'app.intro',
         'app.login',
         'app.dashboard',
-        'app.menu-slide'
+        'app.ionic-menu'
     ];
 
     var modules = angularModules.concat(thirdPartyModules, featureModules);

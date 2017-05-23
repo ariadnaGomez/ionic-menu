@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.menu-slide')
+        .module('app.ionic-menu')
         .directive('submenuList', submenuList);
 
     /* @ngInject */
@@ -13,7 +13,7 @@
                 menuItem: '='
             },
             controller : SubmenuController,
-            templateUrl: 'src/components/ionic-menu-multilevel/submenu-list/submenu-list.html'
+            templateUrl: 'src/components/ionic-menu/submenu-list/submenu-list.html'
         };
 
         /* @ngInject */

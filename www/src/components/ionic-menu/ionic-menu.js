@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('app.menu-slide')
-        .directive('menuSlide', menuSlide);
+        .module('app.ionic-menu')
+        .directive('ionicMenu', ionicMenu);
 
     /* @ngInject */
-    function menuSlide() {
+    function ionicMenu() {
         return {
             restrict : 'E',
             transclude: {
@@ -19,7 +19,7 @@
                 logoPath: '='
             },
             controller : MenuController,
-            templateUrl: 'src/components/ionic-menu-multilevel/menu-slide.html',
+            templateUrl: 'src/components/ionic-menu/ionic-menu.html',
             link: Link
         };
 

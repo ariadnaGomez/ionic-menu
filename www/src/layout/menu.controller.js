@@ -9,8 +9,7 @@
     function MenuController($scope, menuData) {
         $scope.menu = menuData.getMenu();
         $scope.side = 'right';
-        $scope.logo = '../img/sopra.png';
+        $scope.logo = 'https://pmcdeadline2.files.wordpress.com/2016/07/logo-tv-logo.png?w=151&h=149';
     }
-
 
 })();
