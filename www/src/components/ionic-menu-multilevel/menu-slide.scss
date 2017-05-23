@@ -1,8 +1,8 @@
-$brand-color: #ce2929;
-$brand-color-dark: #910000;
-$brand-color-light: #ed7878;
-$color-white: #FFF;
-$backdrop-background: rgba(0, 0, 0, 0.4);
+$brand-color: #ce2929 !default;
+$brand-color-dark: #910000 !default;
+$brand-color-light: #ed7878 !default;
+$color-white: #FFF !default;
+$backdrop-background: rgba(0, 0, 0, 0.4) !default;
 
 @mixin gradient($from, $to) {
   background-color: $from;
