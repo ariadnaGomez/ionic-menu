@@ -6,7 +6,7 @@
     "Ariadna Gómez <ari.grr@gmail.com>"
   ],
   "dependencies": {
-    "gulp": "^3.9.0",
+    "gulp": "^3.5.6",
     "gulp-sass": "^2.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-clean-css": "^3.3.1",
@@ -16,11 +16,21 @@
     "bower": "^1.6.5",
     "gulp-angular-embed-templates": "^2.3.0",
     "gulp-clean": "^0.3.2",
-    "gulp-concat": "^2.6.1",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.7",
-    "shelljs": "^0.5.3"
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "^0.5.0",
+    "karma-growl-reporter": "^0.1.1",
+    "karma-jasmine": "^0.3.6",
+    "karma-junit-reporter": "^0.3.3",
+    "karma-ng-html2js-preprocessor": "^0.2.0",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "phantomjs": "^1.9.18",
+    "phantomjs-prebuilt": "2.1.10",
+    "shelljs": "^0.3.0",
+    "wiredep": "^2.2.2"
   },
   "cordovaPlugins": [
     "cordova-plugin-device",

@@ -5,4 +5,10 @@ require ('./gulp/watch.js');
 require ('./gulp/install.js');
 require ('./gulp/dist.js');
 // require ('./gulp/createView.js');
-// require ('./gulp/tests.js');
+var gulp = require ('gulp');
+
+// function getTask(task) {
+//     return require('./gulp/' + task);
+// }
+
+gulp.task('test', require ('./gulp/test.js')());
